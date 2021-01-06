@@ -28,3 +28,10 @@ def campo_Vazio(a):
 #    x = "123456789.,;:!#@$%*(){}[]|/*+-_"
 #    if a == x:
 #        return true
+
+def campo_Nulo(a):
+
+    if pd.isnull(a):
+        return True
+
+    return False
