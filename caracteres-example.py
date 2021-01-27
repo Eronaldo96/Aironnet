@@ -13,12 +13,16 @@ def caixa_Alta(a):
 
     return False
 
+#------------------------------------------------------------------------------
+#TESTAR A FUNÇÃO VAZIO
 def campo_Vazio(a):
-
-    if len(str(a)) > 0:
+    #correção para checar registros vazios, ainda em teste
+    if not len(a):
         return True
-    else:
-        return False
+    #if len(str(a)) > 0:
+    #    return True
+    #else:
+    #    return False
 
     return False
 
@@ -33,5 +37,28 @@ def campo_Nulo(a):
 
     if pd.isnull(a):
         return True
+
+    return False
+
+#-----------------------------------------------------------------------------
+
+#funções para checar emails ainda em teste!
+def campo_Email(a):
+
+    if re.match("[^@]+@[^@]+\.[^@]+", a):
+        return True
+    else:
+        return False
+
+    return False
+
+def campo_Email_Dominio(a):
+
+    if re.match(r'[^@]+@(?:ce)+\.+[sebrae]+\.+[com]+\.+[br]{2,3}', a):
+        return True
+    elif re.match(r"[^@]+@(?:CE)+\.+[SEBRAE]+\.+[COM]+\.+[BR]{2,3}", a):
+        return True
+    else:
+        return False
 
     return False
